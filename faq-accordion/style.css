@@ -1,0 +1,138 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Figtree", sans-serif;
+  margin: 0px;
+  padding: 0;
+}
+
+body {
+  height: -webkit-fill-available;
+  height: 100vh;
+  line-height: 1.5;
+  word-spacing: 0.3px;
+}
+html {
+  height: -webkit-fill-available;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+:root {
+  --primary-color: hsl(292, 16%, 49%);
+  --secondary-color: hsl(292, 42%, 14%);
+  --bg-color: hsl(275, 100%, 97%);
+  --white: hsl(0, 0%, 100%);
+  --fw-400: 400;
+  --fw-600: 600;
+  --fw-700: 700;
+}
+
+.container {
+  min-height: 100vh;
+  padding-block-start: 17%;
+}
+
+.bg-image {
+  background-image: url("assets/images/background-pattern-desktop.svg");
+  background-position: top center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: var(--bg-color);
+}
+
+.section {
+  max-width: 37.5rem;
+  padding: 2rem;
+  margin-inline: auto;
+  background-color: var(--white);
+  border-radius: 0.7rem;
+}
+
+.section-title {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.section-title h1 {
+  font-size: 3rem;
+  font-weight: var(--fw-700);
+}
+
+.section-body .accordion-title {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: var(--fw-600);
+  margin-block: 0.5rem;
+}
+
+.accordion-body p {
+  opacity: 0.5;
+  font-weight: var(--fw-400);
+  margin-block: 1rem;
+}
+
+.accordion-body {
+  padding-block-end: 1rem;
+  border-bottom: 1px solid hsla(0, 0%, 93%);
+  transition: height 4s ease-in-out;
+}
+
+.accordion-title::marker {
+  content: none;
+}
+
+.accordion-title::after {
+  content: "";
+  background-image: url("assets/images/icon-plus.svg");
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+details[open] .accordion-title::after {
+  background-image: url("assets/images/icon-minus.svg");
+}
+
+.section-body .accordion-body {
+  font-weight: var(--fw-400);
+  margin-block: 1rem;
+}
+
+/* media queries  */
+
+@media screen and (max-width: 1440px) {
+  .bg-image {
+    background-size: auto;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .bg-image {
+    background-image: url("assets/images/background-pattern-mobile.svg");
+    background-position: top center;
+  }
+
+  .section-title h1 {
+    font-size: 2rem;
+  }
+
+  .section-body .accordion-body {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .section {
+    margin-inline: 1.5rem;
+  }
+}
