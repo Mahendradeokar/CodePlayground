@@ -10,6 +10,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { clsx } from "clsx";
 
+import logo from "@/../../public/images/logo.svg";
+
 const inter = Inter({ subsets: ["latin"] });
 
 // export const metadata: Metadata = {
@@ -29,13 +31,8 @@ export default function RootLayout({
         <Container className={"m-auto"}>
           <header>
             <div className="flex gap-11 items-center justify-between border-b-2 border-neutral-light-grayish-blue">
-              <Image
-                src="./images/logo.svg"
-                alt="logo"
-                width={170}
-                height={170}
-              />
-              <nav className="flex gap-8 grow align-self-start text-neutral-dark-grayish-blue">
+              <Image src={logo} alt="logo" />
+              <nav className="lg:flex hidden gap-8 grow align-self-start text-neutral-dark-grayish-blue">
                 {navigation.map(({ url, name }) => {
                   const isActive = pathName === url;
                   const activeClass = "border-b-4 rounded-sm border-primary";
