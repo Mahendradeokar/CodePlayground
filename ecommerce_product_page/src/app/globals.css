@@ -18,3 +18,24 @@ body {
   color: rgb(var(--foreground-rgb));
   background-color: rgb(var(--background-rgb));
 }
+
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+  min-width: 100%;
+  aspect-ratio: 1;
+  gap: 2rem;
+}
+
+.embla__viewport {
+  max-width: clamp(100%, 25vw, 30rem);
+  aspect-ratio: 1;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  object-fit: cover;
+}

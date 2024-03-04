@@ -3,7 +3,7 @@
 // import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Container } from "@/components/shared";
+import { CartIconSvg, Container } from "@/components/shared";
 import Image from "next/image";
 import { navigation } from "@/appConfig";
 import Link from "next/link";
@@ -11,6 +11,7 @@ import { usePathname } from "next/navigation";
 import { clsx } from "clsx";
 
 import logo from "@/../../public/images/logo.svg";
+import { addHoverPrefix } from "@/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,9 +37,10 @@ export default function RootLayout({
                 {navigation.map(({ url, name }) => {
                   const isActive = pathName === url;
                   const activeClass = "border-b-4 rounded-sm border-primary";
+                  const hoverClass = addHoverPrefix(activeClass);
                   return (
                     <Link
-                      className={clsx("py-9", {
+                      className={clsx("py-9", isActive || hoverClass, {
                         [activeClass]: isActive,
                       })}
                       href={url}
@@ -52,14 +54,9 @@ export default function RootLayout({
               <div className="flex gap-8 align-self-end">
                 {/* TODO :- change color on hover */}
                 <button className="p-2">
-                  <Image
-                    src="/images/icon-cart.svg"
-                    width="20"
-                    height="20"
-                    alt="cart icon"
-                  />
+                  <CartIconSvg className="fill-neutral-dark-grayish-blue hover:fill-black" />
                 </button>
-                <button className="rounded-full">
+                <button className="rounded-full border-2 hover:border-primary">
                   <Image
                     className="rounded-full"
                     src="/images/image-avatar.png"
