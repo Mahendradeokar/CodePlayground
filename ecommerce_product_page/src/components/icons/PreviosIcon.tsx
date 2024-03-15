@@ -5,7 +5,7 @@ const PreviousIcons = ({ className }: { className?: string }) => (
     height={18}
     className={className}
   >
-    <path fill="none" stroke="#1D2026" strokeWidth={3} d="M11 1 3 9l8 8" />
+    <path fill="none" strokeWidth={3} d="M11 1 3 9l8 8" />
   </svg>
 );
 export default PreviousIcons;

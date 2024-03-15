@@ -5,7 +5,7 @@ const NextIcon = ({ className }: { className?: string }) => (
     height={18}
     className={className}
   >
-    <path fill="none" stroke="#1D2026" strokeWidth={3} d="m2 1 8 8-8 8" />
+    <path fill="none" strokeWidth={3} d="m2 1 8 8-8 8" />
   </svg>
 );
 export default NextIcon;

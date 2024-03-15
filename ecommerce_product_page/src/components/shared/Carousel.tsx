@@ -10,15 +10,6 @@ interface CarouselProps {
 
 export default function Carousel({ children, className, ...props }: any) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
-
-  const scrollNext = useCallback(() => {
-    console.log(emblaApi);
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
-
   const {
     slides,
     thumbnailButtons = null,
